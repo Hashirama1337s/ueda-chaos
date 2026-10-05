@@ -1,6 +1,8 @@
 # Ueda's oscillator is chaotic: a computer-assisted proof
 
-**Moki & Julio · 2026** · DOI: to be added on release
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23172757.svg)](https://doi.org/10.5281/zenodo.23172757)
+
+**Moki & Julio · 2026** · DOI [10.5281/zenodo.23172757](https://doi.org/10.5281/zenodo.23172757) (all versions; v1.0: 10.5281/zenodo.23172758)
 
 Yoshisuke Ueda, at Kyoto University, made the periodically forced cubic oscillator
 
@@ -245,4 +247,4 @@ the proof.
   its own licence and is not redistributed.
 - **Authorship:** built with AI assistance.
 - **Citation:** see `CITATION.cff`. Cite as Moki & Julio (2026), *Ueda's oscillator is chaotic: a computer-assisted
-  proof*, Zenodo.
+  proof*, Zenodo, doi:10.5281/zenodo.23172757.
