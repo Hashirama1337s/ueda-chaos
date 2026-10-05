@@ -1,0 +1,42 @@
+Ueda map P (k = 1/20, B = 15/2), C0 Lohner tripleton, Taylor order 12; 5 h-sets, 6 transitions
+chart A curved Q=(2.891363243, 0.2469647907) U=(-0.07694438482, -0.9970353864) S=(-0.1227296547, 0.9924401402)
+chart C0 affine Q=(2.892542216, 0.2622417791) U=(-0.07694438482, -0.9970353864) S=(0.1232946766, -0.9923701037)
+chart C1 affine Q=(2.905351067, 0.4504400648) U=(-0.06051942484, -0.9981670197) S=(0.1326828691, -0.9911585424)
+chart C2 affine Q=(2.866149391, 2.965984713) U=(0.08137447483, -0.9966835982) S=(0.4398208579, -0.8980855265)
+chart C3 affine Q=(2.963700171, -2.3162821) U=(0.2925172631, 0.9562602422) S=(0.0437231748, 0.9990436847)
+h-set A: |u - 0| <= 0.0016, |s| <= 0.15
+h-set C0: |u - 0| <= 0.000175496066, |s| <= 0.012
+h-set C1: |u - 0| <= 0.0002387224859, |s| <= 0.002668823121
+h-set C2: |u - 0| <= 0.0008458820801, |s| <= 0.0003863766402
+h-set C3: |u - 0| <= 0.0002444851167, |s| <= 0.0018989598
+transition A => A (orientation 1)
+transition A => C0 (orientation 1)
+transition C0 => C1 (orientation 1)
+transition C1 => C2 (orientation 1)
+transition C2 => C3 (orientation 1)
+transition C3 => A (orientation 1)
+disjoint A / C0: VERIFIED
+disjoint A / C1: VERIFIED
+disjoint A / C2: VERIFIED
+disjoint A / C3: VERIFIED
+disjoint C0 / C1: VERIFIED
+disjoint C0 / C2: VERIFIED
+disjoint C0 / C3: VERIFIED
+disjoint C1 / C2: VERIFIED
+disjoint C1 / C3: VERIFIED
+disjoint C2 / C3: VERIFIED
+set A edge u=c-w: VERIFIED (65 enclosures, 1 integration failures resolved by subdivision)
+set A edge u=c+w: VERIFIED (67 enclosures, 3 integration failures resolved by subdivision)
+set A whole set (S): VERIFIED (79 enclosures, 9 integration failures resolved by subdivision)
+set C0 edge u=c-w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C0 edge u=c+w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C0 whole set (S): VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C1 edge u=c-w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C1 edge u=c+w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C1 whole set (S): VERIFIED (69 enclosures, 1 integration failures resolved by subdivision)
+set C2 edge u=c-w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C2 edge u=c+w: VERIFIED (64 enclosures, 0 integration failures resolved by subdivision)
+set C2 whole set (S): VERIFIED (65 enclosures, 1 integration failures resolved by subdivision)
+DEFINITE FAIL: chart C3 u=[-0.000244485, -0.000244485] s=[-0.00186929, -0.00186929] kind 0 val -0.0016 target A
+set C3 edge u=c-w: FAILED (1 enclosures, 0 integration failures resolved by subdivision)
+NOT VERIFIED

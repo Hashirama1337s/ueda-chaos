@@ -1,0 +1,7 @@
+Existence of attractor: true
+P^2( Left (M) ) < Left (M): true
+P^2( Right(M) ) > Right(N): true
+P^2( Left (N) ) > Right(N): true
+P^2( Right(N) ) < Left (M): true
+Cone condition on the set M: true
+Cone condition on the set N: true
