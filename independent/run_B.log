@@ -1,0 +1,97 @@
+checker B
+chain=../proof/design_chain.txt
+B=[7.5, 7.5] (15/2)
+k=[0.049999999999999996, 0.050000000000000003]
+period=[6.2831853071795862, 6.2831853071795871]
+taylor_order=12  max_step<=1/5
+flip_last=no
+m=1 (single application of P per link)
+polynomial Taylor self-test: passed
+charts:
+  A curved det=[-0.19872850477960571, -0.19872850477960557] U·S=[-0.9800545808209169, -0.98005458082091623]
+  C0 affine det=[0.19928646270595224, 0.19928646270595238] U·S=[0.97994127670087894, 0.9799412767008796]
+  C1 affine det=[0.19242400891033451, 0.19242400891033468] U·S=[0.98131187743493398, 0.98131187743493464]
+  C2 affine det=[0.36528099716920925, 0.36528099716920964] U·S=[0.93089730534955728, 0.93089730534955795]
+  C3 affine det=[0.25042679068269141, 0.25042679068269175] U·S=[0.96813553932719898, 0.96813553932719965]
+transitions:
+  A -> A orient 1
+  A -> C0 orient 1
+  C0 -> C1 orient 1
+  C1 -> C2 orient 1
+  C2 -> C3 orient 1
+  C3 -> A orient -1
+point self-test P(A(0,0)) in chart A: u=[1.4927307701943467e-09, 1.5060237418315003e-09] s=[-8.4482931224008052e-11, -8.4137939863809798e-11]
+
+transition 1: A -> A orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.017860322590205358
+    worst image u=[-0.020817274976437865, -0.019460322590205355]  s=[-0.0084974132126790242, -0.0079188525599161435]
+  (E+) right edge u=c+w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.018016395453179703
+    worst image u=[0.0196163954531797, 0.020977678539349193]  s=[-0.0084343477757765576, -0.0078637866753179624]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.1411746784042161
+    worst image u=[-0.023063370635701377, 0.023149629734414052]  s=[-0.0088253215957838707, -0.0077066497243265808]
+  transition_seconds=0.62384211900000008
+
+transition 2: A -> C0 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.0039200981691042544
+    worst image u=[-0.0054514430833335946, -0.0040955942350547449]  s=[0.0078966815278582025, 0.0084736223390237363]
+  (E+) right edge u=c+w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.034807886437478952
+    worst image u=[0.034983382503429437, 0.036340356145323369]  s=[0.0078417698155322495, 0.008410733471366982]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.0031993873486675112
+    worst image u=[-0.007694919977599776, 0.038512751632670046]  s=[0.0076850728131763095, 0.0088006126513324873]
+  transition_seconds=0.65118224700000005
+
+transition 3: C0 -> C1 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=3  integrations=3  integrator_retries=0  min_slack=0.0018528250442013446
+    worst image u=[-0.0026817839863410831, -0.0020915475300820703]  s=[-0.00022432263360166045, 0.00022206098408547069]
+  (E+) right edge u=c+w: VERIFIED  boxes=3  integrations=3  integrator_retries=0  min_slack=0.0013521518836881201
+    worst image u=[0.0015908743695688457, 0.0026796429814743526]  s=[0.0002202530863414059, 0.0006679505929949775]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=3  integrations=3  integrator_retries=0  min_slack=0.0019963133762541051
+    worst image u=[-0.0032408844743949811, 0.0027427857512810371]  s=[0.0002178981912104514, 0.00067250974449320554]
+  transition_seconds=0.063813030000000007
+
+transition 4: C1 -> C2 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.0015766231443160542
+    worst image u=[-0.0026496225286406446, -0.0024225052244461667]  s=[-9.7309589034076926e-05, 9.6508192669411721e-05]
+  (E+) right edge u=c+w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.0015796651246705671
+    worst image u=[0.0024255472048006796, 0.0026529164296116028]  s=[-9.7140019577156663e-05, 9.6335235005822262e-05]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.00028738786050608214
+    worst image u=[-0.0027078276342553513, 0.0027078296502997222]  s=[-9.8988779722767223e-05, 9.8988470701964068e-05]
+  transition_seconds=0.021511603000000001
+
+transition 5: C2 -> C3 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.00047918205339909497
+    worst image u=[-0.00074350921178870674, -0.00072366717005687157]  s=[-0.00047974770424295929, 0.00048055316619698433]
+  (E+) right edge u=c+w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.00047892324444284853
+    worst image u=[0.00072340836110062513, 0.00074323676453923908]  s=[-0.00048007130664774793, 0.00048087642628423825]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.0013864793546120059
+    worst image u=[-0.00079664300251996924, 0.00079664243226784659]  s=[-0.00051248014479311841, 0.00051248044551617847]
+  transition_seconds=0.020766364000000002
+
+transition 6: C3 -> A orient -1
+  (E-) left edge u=c-w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.0032903144191890796
+    worst image u=[0.0048903144191890799, 0.0050035529860667774]  s=[-0.11693123009260158, -0.11675565938171234]
+  (E+) right edge u=c+w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.0032780808303680283
+    worst image u=[-0.0050039331834629735, -0.0048780808303680286]  s=[-0.11720533849458849, -0.11703005506481351]
+  (S)  |s| < b_dst on the whole h-set: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.032774567352391093
+    worst image u=[-0.0051430824668911908, 0.0051427012022689303]  s=[-0.11722543264760887, -0.11674532861021047]
+  transition_seconds=0.022302302000000003
+
+(D) pairwise disjointness
+  A vs C0: VERIFIED  by normal to first S  gap=0.0026839884042928475
+  A vs C1: VERIFIED  by bounding boxes (v)  gap=0.050123771477948831
+  A vs C2: VERIFIED  by bounding boxes (x)  gap=0.0059245838469976775
+  A vs C3: VERIFIED  by bounding boxes (x)  gap=0.053649306523332552
+  C0 vs C1: VERIFIED  by bounding boxes (x)  gap=0.010947256789831883
+  C0 vs C2: VERIFIED  by bounding boxes (x)  gap=0.024661016407030001
+  C0 vs C3: VERIFIED  by bounding boxes (x)  gap=0.069510370597348992
+  C1 vs C2: VERIFIED  by bounding boxes (x)  gap=0.038594352309919255
+  C1 vs C3: VERIFIED  by bounding boxes (x)  gap=0.057826004894957261
+  C2 vs C3: VERIFIED  by bounding boxes (x)  gap=0.097157466117436364
+
+integrations=205
+seconds=1.4035487590000002
+ALL VERIFIED
+
+real	0m1.412s
+user	0m1.512s
+sys	0m0.000s

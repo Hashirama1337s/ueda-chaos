@@ -1,0 +1,105 @@
+checker B
+chain=../proof/design_chain.txt
+B=[7.3999999999999995, 7.4000000000000012] (override)
+k=[0.049999999999999996, 0.050000000000000003]
+period=[6.2831853071795862, 6.2831853071795871]
+taylor_order=12  max_step<=1/5
+flip_last=no
+m=1 (single application of P per link)
+polynomial Taylor self-test: passed
+charts:
+  A curved det=[-0.19872850477960571, -0.19872850477960557] U·S=[-0.9800545808209169, -0.98005458082091623]
+  C0 affine det=[0.19928646270595224, 0.19928646270595238] U·S=[0.97994127670087894, 0.9799412767008796]
+  C1 affine det=[0.19242400891033451, 0.19242400891033468] U·S=[0.98131187743493398, 0.98131187743493464]
+  C2 affine det=[0.36528099716920925, 0.36528099716920964] U·S=[0.93089730534955728, 0.93089730534955795]
+  C3 affine det=[0.25042679068269141, 0.25042679068269175] U·S=[0.96813553932719898, 0.96813553932719965]
+transitions:
+  A -> A orient 1
+  A -> C0 orient 1
+  C0 -> C1 orient 1
+  C1 -> C2 orient 1
+  C2 -> C3 orient 1
+  C3 -> A orient -1
+point self-test P(A(0,0)) in chart A: u=[-0.86683376516180766, -0.86683376515076194] s=[0.3190590794995351, 0.31905907950605233]
+
+transition 1: A -> A orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.84619054883996814
+    worst image u=[-0.85090218877858226, -0.84779054883996807]  s=[0.31915913396078133, 0.32023641440606576]
+  (E+) right edge u=c+w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.81869386332067928, -0.81549032385350728]  s=[0.30109671532800153, 0.30215026054672461]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.85304910468163297, -0.81355416474868247]  s=[0.29985032243597265, 0.32130636884308961]
+  transition_seconds=0.21983170700000002
+
+transition 2: A -> C0 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=31  integrations=31  integrator_retries=0  min_slack=0.80605590919614811
+    worst image u=[-0.80915413324698149, -0.80623140526209858]  s=[-0.31933982342192879, -0.3182655591231261]
+  (E+) right edge u=c+w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.77980155375222748, -0.77677234969426046]  s=[-0.301304306784835, -0.3002537112592199]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.81098701662886541, -0.77515021113772276]  s=[-0.32040678222367031, -0.29901080799104207]
+  transition_seconds=0.21670333300000003
+
+transition 3: C0 -> C1 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=3  integrations=3  integrator_retries=0  min_slack=0.85553972003158818
+    worst image u=[-0.85755083546136679, -0.85577844251746882]  s=[-0.31794219151538672, -0.31751969782080874]
+  (E+) right edge u=c+w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.85820313505961732, -0.85578054325711528]  s=[-0.31697365177406439, -0.31614824192402419]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.86133313578332915, -0.85573403415287086]  s=[-0.31893697216047795, -0.31611380059955824]
+  transition_seconds=0.035848884000000004
+
+transition 4: C1 -> C2 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.62380146787718538
+    worst image u=[-0.62517901514915519, -0.62464734995731541]  s=[-0.077878181689848072, -0.077564969456532282]
+  (E+) right edge u=c+w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.62220269038650922, -0.62166307395053044]  s=[-0.077680205923216741, -0.077368449584373028]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.62522033024888135, -0.62162792708779457]  s=[-0.077882219057973753, -0.077363884097542981]
+  transition_seconds=0.021132184000000002
+
+transition 5: C2 -> C3 orient 1
+  (E-) left edge u=c-w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=0.10798828377664318
+    worst image u=[-0.10830672009996391, -0.10823276889330095]  s=[0.14276583295444467, 0.1436999486142552]
+  (E+) right edge u=c+w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.10680127207856685, -0.1067261814264821]  s=[0.14278984028790315, 0.14372469207050473]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-0.10835844411182585, -0.10667467937833827]  s=[0.14273715848274568, 0.14375222107434171]
+  transition_seconds=0.018330378000000001
+
+transition 6: C3 -> A orient -1
+  (E-) left edge u=c-w: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-1.0042761687045647, -1.0038531178908885]  s=[0.22838086787032247, 0.22892752025780411]
+  (E+) right edge u=c+w: VERIFIED  boxes=1  integrations=1  integrator_retries=0  min_slack=1.0081580921335496
+    worst image u=[-1.0101894802212665, -1.0097580921335494]  s=[0.23201302486189398, 0.23256776125490605]
+  (S)  |s| < b_dst on the whole h-set: NOT VERIFIED (refuted)  boxes_proved=0  integrations=1  integrator_retries=0
+    reason: enclosure lies entirely outside the required side
+    witness u=[-1.0102922425848024, -1.0037541192568806]  s=[0.22831943267548824, 0.23262116638900515]
+  transition_seconds=0.019250403000000003
+
+(D) pairwise disjointness
+  A vs C0: VERIFIED  by normal to first S  gap=0.0026839884042928475
+  A vs C1: VERIFIED  by bounding boxes (v)  gap=0.050123771477948831
+  A vs C2: VERIFIED  by bounding boxes (x)  gap=0.0059245838469976775
+  A vs C3: VERIFIED  by bounding boxes (x)  gap=0.053649306523332552
+  C0 vs C1: VERIFIED  by bounding boxes (x)  gap=0.010947256789831883
+  C0 vs C2: VERIFIED  by bounding boxes (x)  gap=0.024661016407030001
+  C0 vs C3: VERIFIED  by bounding boxes (x)  gap=0.069510370597348992
+  C1 vs C2: VERIFIED  by bounding boxes (x)  gap=0.038594352309919255
+  C1 vs C3: VERIFIED  by bounding boxes (x)  gap=0.057826004894957261
+  C2 vs C3: VERIFIED  by bounding boxes (x)  gap=0.097157466117436364
+
+integrations=81
+seconds=0.53121821600000008
+NOT VERIFIED
