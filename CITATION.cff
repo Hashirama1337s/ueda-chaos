@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this result or these tools, please cite them as below."
+title: "Moki & Julio: Ueda's oscillator is chaotic - a computer-assisted proof"
+authors:
+  - name: "Moki & Julio"
+version: "1.0"
+date-released: "2026-10-05"
+repository-code: "https://github.com/Hashirama1337s/ueda-chaos"
+license:
+  - CC-BY-4.0
+  - MIT
+keywords:
+  - Ueda attractor
+  - Duffing equation
+  - forced oscillator
+  - chaos
+  - symbolic dynamics
+  - topological entropy
+  - covering relations
+  - computer-assisted proof
+  - interval arithmetic
+  - CAPD
+abstract: >-
+  Ueda's forced cubic oscillator x'' + 0.05 x' + x^3 = 7.5 cos t, the case Ueda calls his 'representative' chaotic
+  attractor, has been called chaotic on numerical evidence only. We prove, with rigorous interval-arithmetic integration
+  (CAPD), covering relations A => A, A => C0 => C1 => C2 => C3 => A for its time-2pi map on five disjoint sets built
+  around the saddle fixed point D and a numerically computed homoclinic loop. Consequently every itinerary of
+  one-period stays near D and five-period excursions is realised by a true solution, there are infinitely many periodic
+  orbits, and the topological entropy of the map is at least ln of the plastic number (about 0.2812 per period). The
+  claim concerns a chaotic invariant set, not the whole observed attractor. Two
+  independently written checkers, positive and negative controls and a one-command reproduction are included.
