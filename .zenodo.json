@@ -1,8 +1,8 @@
 {
-  "title": "Ueda's oscillator is chaotic - a computer-assisted proof",
+  "title": "Ueda's oscillator is chaotic: a computer-assisted proof",
   "upload_type": "software",
   "version": "1.0",
-  "description": "<p>Computer-assisted proof that Ueda's forced oscillator x'' + 0.05 x' + x^3 = 7.5 cos t (the case Ueda calls his 'representative' chaotic attractor) is chaotic: its time-2&pi; map satisfies covering relations A &rArr; A, A &rArr; C0 &rArr; C1 &rArr; C2 &rArr; C3 &rArr; A on five disjoint sets around the saddle fixed point D, verified with rigorous interval arithmetic (CAPD). Hence every itinerary of one-period stays and five-period excursions is realised by a true solution, there are infinitely many periodic orbits, and the topological entropy is at least ln of the plastic number (about 0.2812 per period). The claim concerns a chaotic invariant set, not the whole observed attractor. Two independently written checkers, controls and a one-command reproduction are included. Text and figures CC BY 4.0; code MIT.</p>",
+  "description": "<p><b>In plain words.</b> \nUeda's oscillator is a spring with a cubic restoring force and a little friction, pushed back and forth at a steady beat. It became one of the founding examples of chaos. For decades it was called chaotic on the strength of pictures and simulations; as far as we could find, nobody had proved it. This archive contains a computer-assisted proof that the oscillator has chaotic motions: every calculation returns a range guaranteed to contain the true value, and two programs written separately check the whole chain. The proof concerns a chaotic set of motions, not the whole attractor seen in simulations, and it says nothing about most starting points.</p>\n<p><b>The idea in one picture.</b> kneading dough. A baker stretches the dough long, lays it back across itself and stretches it again, so crumbs that start side by side can end up on different routes. Here the dough is the set of possible states of the spring, and one push does the stretching. We picked five small, thin boxes of states and proved that one push stretches each box right across the next one on a fixed route map. <b>Where the picture breaks.</b> a baker mixes all the dough, but the stretching is proved only for these five thin boxes.</p>\n<p><b>For specialists.</b> Computer-assisted proof that Ueda's forced oscillator x'' + 0.05 x' + x^3 = 7.5 cos t (the case Ueda calls his 'representative' chaotic attractor) is chaotic: its time-2&pi; map satisfies covering relations A &rArr; A, A &rArr; C0 &rArr; C1 &rArr; C2 &rArr; C3 &rArr; A on five disjoint sets around the saddle fixed point D, verified with rigorous interval arithmetic (CAPD). Hence every itinerary of one-period stays and five-period excursions is realised by a true solution, there are infinitely many periodic orbits, and the topological entropy is at least ln of the plastic number (about 0.2812 per period). The claim concerns a chaotic invariant set, not the whole observed attractor. Two independently written checkers, controls and a one-command reproduction are included. Text and figures CC BY 4.0; code MIT.</p>\n<p><b>Links.</b> Repository, with a plain-language guide: <a href=\"https://github.com/Hashirama1337s/ueda-chaos\">github.com/Hashirama1337s/ueda-chaos</a>. All projects: <a href=\"https://github.com/Hashirama1337s\">the Moki &amp; Julio lab map</a>.</p>\n<p><i>Prepared with AI assistance; what was checked, and by what, is stated above.</i></p>",
   "creators": [
     {
       "name": "Moki & Julio"
@@ -19,6 +19,8 @@
     "covering relations",
     "computer-assisted proof",
     "interval arithmetic",
-    "CAPD"
+    "CAPD",
+    "forced oscillator",
+    "nonlinear dynamics"
   ]
 }

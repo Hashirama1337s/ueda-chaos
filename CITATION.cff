@@ -21,7 +21,10 @@ keywords:
   - computer-assisted proof
   - interval arithmetic
   - CAPD
+  - nonlinear dynamics
 abstract: >-
+  Ueda's oscillator is a spring with a cubic restoring force and a little friction, pushed back and forth at a
+  steady beat. It became one of the founding examples of chaos.
   Ueda's forced cubic oscillator x'' + 0.05 x' + x^3 = 7.5 cos t, the case Ueda calls his 'representative' chaotic
   attractor, has been called chaotic on numerical evidence only. We prove, with rigorous interval-arithmetic integration
   (CAPD), covering relations A => A, A => C0 => C1 => C2 => C3 => A for its time-2pi map on five disjoint sets built

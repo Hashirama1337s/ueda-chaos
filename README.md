@@ -19,13 +19,12 @@ proved it. The usual pen-and-paper route (Melnikov's method) does not apply, and
 friction do not reach these values. Computer-assisted proofs existed for other forced oscillators, such as the forced
 damped pendulum.
 
-A picture that helps: **kneading dough.** A baker stretches the dough long, lays it back across itself and stretches
+![](brand/icon-picture.svg) **The idea in one picture.** **Kneading dough.** A baker stretches the dough long, lays it back across itself and stretches
 it again. Crumbs that start side by side can be sent along completely different routes. Here the "dough" is the set of possible states of the spring (where it
 is and how fast it moves), and one push of the forcing does the stretching. We picked five small, thin boxes of states
 and proved that one push stretches each box right across the next one on a fixed route map, overhanging both ends.
 
-Once every link of the route map is proved, any route you choose through it is followed by a real motion. Where the
-picture breaks: a baker mixes all the dough, but we prove the stretching only for these five thin boxes. The theorem
+Once every link of the route map is proved, any route you choose through it is followed by a real motion. **Where the picture breaks.** A baker mixes all the dough, but we prove the stretching only for these five thin boxes. The theorem
 says nothing about most starting points, or about what a typical simulation settles into. It also says nothing about
 how fast nearby states separate (no Lyapunov exponents).
 
@@ -76,11 +75,7 @@ a plane: position across, speed up. The rule that takes one flash to the next is
 The route map has one "home" box A and four boxes C0 to C3 along a loop. From A, one push can keep the motion in A
 (a short stay, **S**), or start a five-push loop through C0, C1, C2, C3 and back to A (a long loop, **L**).
 
-```mermaid
-flowchart LR
-  A((A)) -->|S: one push| A
-  A -->|L starts| C0 --> C1 --> C2 --> C3 -->|back home| A
-```
+![Route map of the Ueda proof: five boxes and the six proved links between them](brand/hero-ueda-route-map.svg)
 
 The theorem: for **every** endless string of S's and L's, in any order, there is an exact solution of the equation
 that follows it. Repeating strings give repeating motions, so there are infinitely many periodic orbits.
