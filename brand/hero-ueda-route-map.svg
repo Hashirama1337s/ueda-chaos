@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Route map of the Ueda proof: five boxes and the six proved links between them">
 <title>Route map of the Ueda proof: five boxes and the six proved links between them</title>
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a3fa8"/></marker></defs>
-<rect width="860" height="300" rx="10" fill="#ffffff" stroke="#d9dbe8"/>
-<text x="20" y="34" font-size="18" font-weight="600" fill="#18192b">The route map: 5 boxes, 6 proved links</text>
-<text x="20" y="54" font-size="12" fill="#555b74">An arrow from one box to the next means: one push of the forcing stretches the first box right across the second (proved).</text>
-<g fill="none" stroke="#3a3fa8" stroke-width="2" marker-end="url(#a)">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#39ff14"/></marker></defs>
+<rect width="860" height="300" rx="10" fill="#1c2026" stroke="#2f353d"/>
+<text x="20" y="34" font-size="18" font-weight="600" fill="#e8edf2">The route map: 5 boxes, 6 proved links</text>
+<text x="20" y="54" font-size="12" fill="#9aa4ae">An arrow from one box to the next means: one push of the forcing stretches the first box right across the second (proved).</text>
+<g fill="none" stroke="#39ff14" stroke-width="2" marker-end="url(#a)">
 <path d="M196,140 L288,100"/><path d="M372,90 L448,90"/><path d="M490,114 L490,194"/><path d="M448,218 L372,218"/><path d="M288,208 L196,162"/>
 <path d="M112,126 C76,70 188,70 152,124"/>
 </g>
-<g font-size="15" font-weight="600" fill="#18192b" text-anchor="middle">
-<rect x="70" y="128" width="124" height="44" rx="8" fill="#eef0fa" stroke="#3a3fa8"/><text x="132" y="156">A</text>
-<rect x="290" y="68" width="80" height="44" rx="8" fill="#eef0fa"/><text x="330" y="96">C0</text>
-<rect x="450" y="68" width="80" height="44" rx="8" fill="#eef0fa"/><text x="490" y="96">C1</text>
-<rect x="450" y="196" width="80" height="44" rx="8" fill="#eef0fa"/><text x="490" y="224">C2</text>
-<rect x="290" y="196" width="80" height="44" rx="8" fill="#eef0fa"/><text x="330" y="224">C3</text>
+<g font-size="15" font-weight="600" fill="#e8edf2" text-anchor="middle">
+<rect x="70" y="128" width="124" height="44" rx="8" fill="#262b31" stroke="#39ff14"/><text x="132" y="156">A</text>
+<rect x="290" y="68" width="80" height="44" rx="8" fill="#262b31"/><text x="330" y="96">C0</text>
+<rect x="450" y="68" width="80" height="44" rx="8" fill="#262b31"/><text x="490" y="96">C1</text>
+<rect x="450" y="196" width="80" height="44" rx="8" fill="#262b31"/><text x="490" y="224">C2</text>
+<rect x="290" y="196" width="80" height="44" rx="8" fill="#262b31"/><text x="330" y="224">C3</text>
 </g>
-<text x="132" y="196" font-size="11.5" fill="#555b74" text-anchor="middle">loop = a one-period stay</text>
-<g font-size="12.5" fill="#18192b">
-<rect x="580" y="78" width="258" height="166" rx="8" fill="#ffffff" stroke="#d9dbe8"/>
+<text x="132" y="196" font-size="11.5" fill="#9aa4ae" text-anchor="middle">loop = a one-period stay</text>
+<g font-size="12.5" fill="#e8edf2">
+<rect x="580" y="78" width="258" height="166" rx="8" fill="#1c2026" stroke="#2f353d"/>
 <text x="596" y="104" font-weight="600">What the proof gives</text>
-<text x="596" y="126" fill="#555b74">Pick any route through the arrows,</text>
-<text x="596" y="143" fill="#555b74">forever. A real motion of the</text>
-<text x="596" y="160" fill="#555b74">oscillator follows it.</text>
+<text x="596" y="126" fill="#9aa4ae">Pick any route through the arrows,</text>
+<text x="596" y="143" fill="#9aa4ae">forever. A real motion of the</text>
+<text x="596" y="160" fill="#9aa4ae">oscillator follows it.</text>
 <text x="596" y="190" font-weight="600">What it does not give</text>
-<text x="596" y="212" fill="#555b74">Anything about states outside</text>
-<text x="596" y="229" fill="#555b74">these five thin boxes.</text>
+<text x="596" y="212" fill="#9aa4ae">Anything about states outside</text>
+<text x="596" y="229" fill="#9aa4ae">these five thin boxes.</text>
 </g>
-<text x="20" y="282" font-size="11" fill="#555b74">Schematic of the link structure only; box shapes and positions are in proof/design_chain.txt. Moki &amp; Julio.</text>
+<text x="20" y="282" font-size="11" fill="#9aa4ae">Schematic of the link structure only; box shapes and positions are in proof/design_chain.txt. Moki &amp; Julio.</text>
 </svg>
