@@ -1,14 +1,14 @@
 # Ueda's oscillator is chaotic: a computer-assisted proof
 
-**A damped spring, pushed back and forth, has been called chaotic for decades because simulations looked chaotic. We
-proved it has chaotic motions: write down any pattern of "short stays" and "long loops", and an exact motion of the spring follows it.**
+**Ueda's oscillator, a damped spring pushed back and forth and called chaotic for decades on the strength of simulations, is proved to have chaotic motions, with two independently written rigorous checkers.**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23172757.svg)](https://doi.org/10.5281/zenodo.23172757)
+[![DOI 10.5281/zenodo.23172757](brand/doi.svg)](https://doi.org/10.5281/zenodo.23172757) ![Licence: text and data CC BY 4.0, code MIT](brand/licence.svg) [![Moki & Julio lab map](brand/lab.svg)](https://github.com/Hashirama1337s)
 
-Moki & Julio · 2026 · DOI [10.5281/zenodo.23172757](https://doi.org/10.5281/zenodo.23172757) (all
-versions; v1.0: 10.5281/zenodo.23172758) · text CC BY 4.0, code MIT
+Moki & Julio · 2026 · version 1.0
 
-## The story in a minute
+**Read** [TECHNICAL.md](TECHNICAL.md) · **Re-run** `bash reproduce.sh` · **Check** [proof/design_chain.txt](proof/design_chain.txt)
+
+## In plain words
 
 Yoshisuke Ueda, at Kyoto University, studied a spring with a cubic restoring force and a little friction, pushed back
 and forth once every 2π units of time. Written out, it is x'' + 0.05 x' + x^3 = 7.5 cos t. It became one of the
@@ -33,9 +33,42 @@ how fast nearby states separate (no Lyapunov exponents).
 rounding error counted. Two programs, written separately, check the whole chain. Both say VERIFIED, and both reject
 deliberately broken versions of the boxes.
 
-## Climb the ladder
+## At a glance
 
-### Step 1 - the idea (for anyone)
+*The exact claims, for specialists. Terms are explained in "How it works" and "Words you will meet".*
+
+- **Theorem.** Let P be the stroboscopic map of x'' + 0.05 x' + x^3 = 7.5 cos t from t = 0 to t = 2π. There are five
+  pairwise disjoint h-sets A, C0, C1, C2, C3 in the (x, x') plane (exact definitions in
+  [`proof/design_chain.txt`](proof/design_chain.txt)) such that P satisfies the covering relations
+  A ⇒ A and A ⇒ C0 ⇒ C1 ⇒ C2 ⇒ C3 ⇒ A, in the sense of Zgliczyński and Gidea.
+- **Consequences.** Every S/L itinerary is realised; every periodic itinerary by a periodic orbit; P has a compact
+  invariant set on which it is semi-conjugate to the subshift of finite type of this graph, so h_top(P) ≥ ln ρ ≈ 0.2812.
+- **Checkers.** Checker A (CAPD Lohner sets, forcing as a rotating pair): 644 enclosures, 12 s, VERIFIED, also at
+  Taylor orders 10 and 14. Checker B (written from [`independent/SPEC.md`](independent/SPEC.md) only, without access to
+  checker A): 205 enclosures, 1.4 s, VERIFIED.
+- **Controls.** Checker A rejects five broken designs (flipped last link, 10x narrower C3, 10x thinner band for C1,
+  forcing 7.0, forcing 7.4); checker B rejects the two it runs.
+
+Full theorem, margins per link, charts, history and prior work: [TECHNICAL.md](TECHNICAL.md).
+
+![The five proof boxes drawn on Ueda's attractor](figures/proof_chain.png)
+
+## What we do not claim
+
+- That almost every orbit is chaotic, or anything about Lyapunov exponents.
+- That the attractor seen in simulations is this invariant set, or contains it.
+- Ueda's hypothesis that the attractor is the closure of the unstable manifold of the saddle D.
+- That D exists with the coordinates and multipliers quoted above (they are numerical), or that D has a homoclinic
+  orbit. The theorem only gives some fixed point inside A.
+- Anything at other parameter values. The rejected controls at forcing 7.0 and 7.4 show that *this design* fails
+  there, not that the oscillator is regular there.
+- Ueda's 1961 "broken egg" recording (a different equation) and his 1978 case (k, B) = (0.1, 12) are not covered.
+- Both checkers use the CAPD library (our note; the same limit is stated in the laser-chaos repository), so a bug
+  inside CAPD would affect both; the library controls guard against that only partly.
+
+## How it works
+
+### The idea
 
 Look at the spring once per push, like a strobe light that flashes once per forcing cycle. Each flash shows a point in
 a plane: position across, speed up. The rule that takes one flash to the next is the **stroboscopic map** P.
@@ -52,7 +85,7 @@ flowchart LR
 The theorem: for **every** endless string of S's and L's, in any order, there is an exact solution of the equation
 that follows it. Repeating strings give repeating motions, so there are infinitely many periodic orbits.
 
-### Step 2 - how it works (for a curious student)
+### A worked example
 
 **Finding the boxes (not part of the proof).** Simulations show a saddle point D ≈ (2.891363, 0.246965) of the map:
 one push stretches nearby states by about 13.0 in one direction and squeezes them by about 0.056 in the other. These
@@ -78,25 +111,7 @@ those four pushes the map stretches by a factor of about 2,500. Splitting the lo
 a factor of about ρ ≈ 1.3247 per push, the *plastic number* (the real root of x^3 = x + 1). That growth rate gives the
 **topological entropy**: at least ln ρ ≈ 0.2812 per forcing period.
 
-### Step 3 - the real thing (for specialists)
-
-- **Theorem.** Let P be the stroboscopic map of x'' + 0.05 x' + x^3 = 7.5 cos t from t = 0 to t = 2π. There are five
-  pairwise disjoint h-sets A, C0, C1, C2, C3 in the (x, x') plane (exact definitions in
-  [`proof/design_chain.txt`](proof/design_chain.txt)) such that P satisfies the covering relations
-  A ⇒ A and A ⇒ C0 ⇒ C1 ⇒ C2 ⇒ C3 ⇒ A, in the sense of Zgliczyński and Gidea.
-- **Consequences.** Every S/L itinerary is realised; every periodic itinerary by a periodic orbit; P has a compact
-  invariant set on which it is semi-conjugate to the subshift of finite type of this graph, so h_top(P) ≥ ln ρ ≈ 0.2812.
-- **Checkers.** Checker A (CAPD Lohner sets, forcing as a rotating pair): 644 enclosures, 12 s, VERIFIED, also at
-  Taylor orders 10 and 14. Checker B (written from [`independent/SPEC.md`](independent/SPEC.md) only, without access to
-  checker A): 205 enclosures, 1.4 s, VERIFIED.
-- **Controls.** Checker A rejects five broken designs (flipped last link, 10x narrower C3, 10x thinner band for C1,
-  forcing 7.0, forcing 7.4); checker B rejects the two it runs.
-
-Full theorem, margins per link, charts, history and prior work: [TECHNICAL.md](TECHNICAL.md).
-
-![The five proof boxes drawn on Ueda's attractor](figures/proof_chain.png)
-
-## Use it as a tool
+## Reproduce and reuse
 
 Questions this lets you answer:
 
@@ -135,19 +150,6 @@ make a check fail, never pass falsely.
 **Look at the attractor yourself** (non-rigorous, Python with numpy and matplotlib, from inside `design/`):
 `attractor.py` draws it, `explore.py` finds the fixed points, `manifolds2.py` grows the unstable manifold.
 
-## What we did not show
-
-- That almost every orbit is chaotic, or anything about Lyapunov exponents.
-- That the attractor seen in simulations is this invariant set, or contains it.
-- Ueda's hypothesis that the attractor is the closure of the unstable manifold of the saddle D.
-- That D exists with the coordinates and multipliers quoted above (they are numerical), or that D has a homoclinic
-  orbit. The theorem only gives some fixed point inside A.
-- Anything at other parameter values. The rejected controls at forcing 7.0 and 7.4 show that *this design* fails
-  there, not that the oscillator is regular there.
-- Ueda's 1961 "broken egg" recording (a different equation) and his 1978 case (k, B) = (0.1, 12) are not covered.
-- Both checkers use the CAPD library (our note; the same limit is stated in the laser-chaos repository), so a bug
-  inside CAPD would affect both; the library controls guard against that only partly.
-
 ## Words you will meet
 
 - **Stroboscopic map** - the state of the system sampled once per forcing period, as under a strobe light.
@@ -164,11 +166,21 @@ make a check fail, never pass falsely.
   suspect.
 - **CAPD** - a C++ library for rigorous computation with differential equations (Kapela et al. 2021).
 
-## For specialists: the original README
+## How to cite
 
-The complete previous README (theorem, how the proof was built and checked, margins per link, controls, reproduction,
-history, prior work and references) is kept verbatim in **[TECHNICAL.md](TECHNICAL.md)**.
+```
+Moki & Julio (2026). Ueda's oscillator is chaotic - a computer-assisted proof. Version 1.0. Zenodo. https://doi.org/10.5281/zenodo.23172757
+```
 
-Other projects: [github.com/Hashirama1337s](https://github.com/Hashirama1337s)
+The DOI always resolves to the newest archived version. Version 1.0 is 10.5281/zenodo.23172758. Machine-readable: [CITATION.cff](CITATION.cff).
+Licences: text, figures and data are CC BY 4.0 (`LICENSE`); code is MIT (`LICENSE-CODE`). CAPD is used under its own licence and is not redistributed.
 
-*Prepared with AI assistance; all results are machine-checked.*
+## Related projects
+
+- [laser-chaos](https://github.com/Hashirama1337s/laser-chaos): a computer-assisted proof of a chaotic set in a loss-modulated laser model
+- [rikitake-chaos](https://github.com/Hashirama1337s/rikitake-chaos): a computer-assisted proof of chaotic motions in Rikitake's two-disc dynamo
+- All projects: [the Moki & Julio lab map](https://github.com/Hashirama1337s)
+
+---
+
+*Prepared with AI assistance; what was checked, and by what, is stated above.*

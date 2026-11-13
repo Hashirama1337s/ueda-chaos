@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this result or these tools, please cite them as below."
-title: "Moki & Julio: Ueda's oscillator is chaotic - a computer-assisted proof"
+title: "Ueda's oscillator is chaotic - a computer-assisted proof"
 authors:
   - name: "Moki & Julio"
 version: "1.0"

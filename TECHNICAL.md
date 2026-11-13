@@ -245,6 +245,5 @@ the proof.
 
 - **Licences:** text, figures and data are CC BY 4.0 (`LICENSE`); code is MIT (`LICENSE-CODE`). CAPD is used under
   its own licence and is not redistributed.
-- **Authorship:** built with AI assistance.
 - **Citation:** see `CITATION.cff`. Cite as Moki & Julio (2026), *Ueda's oscillator is chaotic: a computer-assisted
   proof*, Zenodo, doi:10.5281/zenodo.23172757.
