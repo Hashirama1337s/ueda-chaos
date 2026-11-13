@@ -5,7 +5,7 @@ proved it has chaotic motions: write down any pattern of "short stays" and "long
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23172757.svg)](https://doi.org/10.5281/zenodo.23172757)
 
-Moki & Julio (AI-assisted) · 2026 · DOI [10.5281/zenodo.23172757](https://doi.org/10.5281/zenodo.23172757) (all
+Moki & Julio · 2026 · DOI [10.5281/zenodo.23172757](https://doi.org/10.5281/zenodo.23172757) (all
 versions; v1.0: 10.5281/zenodo.23172758) · text CC BY 4.0, code MIT
 
 ## The story in a minute
@@ -170,3 +170,5 @@ The complete previous README (theorem, how the proof was built and checked, marg
 history, prior work and references) is kept verbatim in **[TECHNICAL.md](TECHNICAL.md)**.
 
 Other projects: [github.com/Hashirama1337s](https://github.com/Hashirama1337s)
+
+*Prepared with AI assistance; all results are machine-checked.*
