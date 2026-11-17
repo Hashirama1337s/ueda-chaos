@@ -59,6 +59,10 @@ Consequently:
    - ρ ≈ 1.3247 is the *plastic number*, the real root of x³ = x + 1. It is the growth rate of the graph above,
      whose characteristic polynomial x⁵ − x⁴ − 1 factors as (x² − x + 1)(x³ − x − 1).
 
+![Number of closed box-routes against their length n, on a log scale, rising from 1 at n = 1 to 76,724 at n = 40](figures/ueda-repeating-routes.svg)
+
+*How many different box-routes close up after n pushes, counted exactly from the proof's route map (log scale). Each is followed by an exact solution that repeats after n pushes, and different routes give different starting states: 1 for n = 1, 6 for n = 5, 276 for n = 20, 76,724 for n = 40. The count grows by about 1.3247 per push, the plastic number.*
+
 (P is a homeomorphism of the plane: solutions of this polynomial forced equation exist for all forward and backward
 time. Entropy is in Bowen's sense, and h(P) ≥ h(P restricted to the invariant set).)
 
@@ -76,6 +80,10 @@ statement that was proved first for the Lorenz and Rössler equations [9, 10].
 ## How the proof was built and checked
 
 ![the verified chain on the attractor](figures/proof_chain.png)
+
+![Ueda's attractor in grey with five small coloured proof-box markers, and a zoom showing boxes A and C0 at true size](figures/ueda-proof-boxes-on-attractor.svg)
+
+*Ueda's oscillator x'' + 0.05 x' + x^3 = 7.5 cos t, seen once per push of the forcing. Grey: the familiar picture of Ueda's attractor, recomputed by simulation (an illustration, not part of the proof). Coloured marks: the five proof boxes; the proved route is A to A, or A to C0, C1, C2, C3 and back to A. Right: A and C0 at true size, exactly as defined in `proof/design_chain.txt`. The theorem does not say the attractor contains these boxes.*
 
 **1. Guide (numerical, not part of the proof).**
 - **The saddle.** Simulations show a saddle-type fixed point D ≈ (2.891363, 0.246965), with multipliers 13.003744 and

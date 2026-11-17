@@ -4,7 +4,7 @@
 
 [![DOI 10.5281/zenodo.23172757](brand/doi.svg)](https://doi.org/10.5281/zenodo.23172757) ![Licence: text and data CC BY 4.0, code MIT](brand/licence.svg) [![Moki & Julio lab map](brand/lab.svg)](https://github.com/Hashirama1337s)
 
-Moki & Julio · 2026 · version 1.0
+Moki & Julio · 2026 · version 1.0.1
 
 **Read** [TECHNICAL.md](TECHNICAL.md) · **Re-run** `bash reproduce.sh` · **Check** [proof/design_chain.txt](proof/design_chain.txt)
 
@@ -50,7 +50,9 @@ deliberately broken versions of the boxes.
 
 Full theorem, margins per link, charts, history and prior work: [TECHNICAL.md](TECHNICAL.md).
 
-![The five proof boxes drawn on Ueda's attractor](figures/proof_chain.png)
+![Ueda's attractor in grey with five small coloured proof-box markers, and a zoom showing boxes A and C0 at true size](figures/ueda-proof-boxes-on-attractor.svg)
+
+*Ueda's oscillator x'' + 0.05 x' + x^3 = 7.5 cos t, seen once per push of the forcing. Grey: the familiar picture of Ueda's attractor, recomputed by simulation (an illustration, not part of the proof). Coloured marks: the five proof boxes; the proved route is A to A, or A to C0, C1, C2, C3 and back to A. Right: A and C0 at true size, exactly as defined in `proof/design_chain.txt`. The theorem does not say the attractor contains these boxes.*
 
 ## What we do not claim
 
@@ -105,6 +107,10 @@ those four pushes the map stretches by a factor of about 2,500. Splitting the lo
 **How fast the patterns multiply.** An S lasts one push and an L lasts five, so the number of allowed patterns grows by
 a factor of about ρ ≈ 1.3247 per push, the *plastic number* (the real root of x^3 = x + 1). That growth rate gives the
 **topological entropy**: at least ln ρ ≈ 0.2812 per forcing period.
+
+![Number of closed box-routes against their length n, on a log scale, rising from 1 at n = 1 to 76,724 at n = 40](figures/ueda-repeating-routes.svg)
+
+*How many different box-routes close up after n pushes, counted exactly from the proof's route map (log scale). Each is followed by an exact solution that repeats after n pushes, and different routes give different starting states: 1 for n = 1, 6 for n = 5, 276 for n = 20, 76,724 for n = 40. The count grows by about 1.3247 per push, the plastic number.*
 
 ## Reproduce and reuse
 
@@ -161,14 +167,41 @@ make a check fail, never pass falsely.
   suspect.
 - **CAPD** - a C++ library for rigorous computation with differential equations (Kapela et al. 2021).
 
+## Open doors
+
+What this work leaves open, and what we noticed along the way but did not follow up, for anyone who wants to take the next step.
+
+- **Ueda's touching-curves hypothesis.** Through the saddle point D run a stretching curve and a squeezing curve.
+  From his drawings Ueda hypothesised that these curves not only cross each other but also, somewhere, touch without
+  crossing (a "tangency"). A computer-assisted method for proving tangencies already exists for the forced damped
+  pendulum. *Status:* open according to Ueda (2023), *Uncovering the Nature of Chaos*, §2.3.4, where it is stated as a
+  hypothesis drawn from computer drawings. *Start here:* D ≈ (2.891363, 0.246965) with multipliers 13.003744 and
+  0.056169 (see [TECHNICAL.md](TECHNICAL.md)), `design/manifolds2.py` (grows the stretching curve), and the tangency proof
+  of Wilczak and Zgliczyński (2009), reference [7] in TECHNICAL.md. *Ceiling:* a proof, at Ueda's own representative
+  setting, of one of the structural claims he drew from experiments.
+- **Prove that the saddle D and its loop exist.** The five proof boxes were guided by a saddle point D and an orbit that
+  leaves D and comes back after four pushes, both found by simulation. The theorem does not claim that D exists with
+  these numbers, nor that it has such a loop. *Status:* UNTESTED observation from this work (found numerically, not
+  proved). *Start here:* `design/explore.py` (finds the fixed points), `design/manifolds2.py`, and the boxes in
+  `proof/design_chain.txt`. *Ceiling:* the numerical guide of this proof turned into a theorem, matching the picture
+  Ueda drew of his attractor.
+- **Settle one digit in Ueda's table.** Ueda's 2023 account lists two "inversely unstable" fixed points. Our
+  (non-rigorous) computation reproduces one of them, but for the other gives 0.295150 where the text prints 0.295115, a
+  difference of 3.5 × 10⁻⁵ in the second coordinate that we have not resolved. A validated computation (interval
+  Newton's method) would settle which is right. *Status:* UNTESTED observation from this work. *Start here:* footnote to
+  the History section of [TECHNICAL.md](TECHNICAL.md) and `design/explore.py`. *Ceiling:* a certain confirmation or
+  correction of a published table of fixed points.
+
 ## How to cite
 
 ```
-Moki & Julio (2026). Ueda's oscillator is chaotic - a computer-assisted proof. Version 1.0. Zenodo. https://doi.org/10.5281/zenodo.23172757
+Moki & Julio (2026). Ueda's oscillator is chaotic - a computer-assisted proof. Version 1.0.1. Zenodo. https://doi.org/10.5281/zenodo.23172757
 ```
 
 The DOI always resolves to the newest archived version. Version 1.0 is 10.5281/zenodo.23172758. Machine-readable: [CITATION.cff](CITATION.cff).
 Licences: text, figures and data are CC BY 4.0 (`LICENSE`); code is MIT (`LICENSE-CODE`). CAPD is used under its own licence and is not redistributed.
+
+Release note - v1.0.1: adds Open doors and figures; no change to the certified results.
 
 ## Related projects
 

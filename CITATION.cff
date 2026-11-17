@@ -3,7 +3,7 @@ message: "If you use this result or these tools, please cite them as below."
 title: "Ueda's oscillator is chaotic - a computer-assisted proof"
 authors:
   - name: "Moki & Julio"
-version: "1.0"
+version: "1.0.1"
 doi: "10.5281/zenodo.23172757"
 date-released: "2026-10-05"
 repository-code: "https://github.com/Hashirama1337s/ueda-chaos"
